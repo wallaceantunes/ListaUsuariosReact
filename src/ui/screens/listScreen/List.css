@@ -1,0 +1,23 @@
+.list {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+.table-responsive {
+    max-height: 300px !important;
+}
+.btn-footer {
+    position: fixed;
+    right: 37px;
+    bottom: 23px;
+}
+.btn-round {
+    width: 65px;
+    height: 65px;
+    padding: 0px 0px;
+    font-size: 20px;
+    border-radius: 50%;
+}
+.table-light, .table-light>td, .table-light>th {
+    background-color: #fff;
+}
+  
