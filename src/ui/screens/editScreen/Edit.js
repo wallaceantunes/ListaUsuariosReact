@@ -5,10 +5,13 @@ import { editClient } from '../../../api/clientApi'
 import { getCep } from '../../../api/cepApi'
 import SweetAlert from 'sweetalert2-react';
 import { useHistory } from 'react-router-dom';
+import Map from '../../components/map'
 
 function Edit(props) {
     const history = useHistory()
     const [show, setShow] = useState(false)
+    const [lat, setLat] = useState(0)
+    const [lng, setLng] = useState(0)
     const [cep, setCep] = useState('')
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -43,6 +46,8 @@ function Edit(props) {
     const getAddrresByCep = async (cep) => {
         try {
             const resp = await getCep(cep)
+            setLat(Number(resp.data.latitude))
+            setLng(Number(resp.data.longitude))
             setAddressStreet(resp.data.logradouro)
             setNeighborhood(resp.data.bairro)
             setCity(resp.data.cidade.nome)
@@ -125,6 +130,9 @@ function Edit(props) {
                         </Col>
                     </Form.Row>
                 </Form>
+                <br />
+                <Map position={[lat, lng]} />
+                <br />
             </Container>
             <SweetAlert
                 show={show}

@@ -37,66 +37,6 @@ function List() {
                 </Navbar.Brand>
             </Navbar>
             <Container>
-                <Card className="card-list">
-                    <br />
-                    <Container>
-                        <Form>
-                            <Form.Row>
-                                <Col md={3}>
-                                    <Form.Group controlId="searchName">
-                                        <Form.Label>Nome</Form.Label>
-                                        <Form.Control type="text" />
-                                    </Form.Group>
-                                </Col>
-                                <Col md={6}>
-                                    <Form.Group controlId="searchEmail">
-                                        <Form.Label>Email</Form.Label>
-                                        <Form.Control type="email" />
-                                    </Form.Group>
-                                </Col>
-                                <Col md={3}>
-                                    <Form.Group controlId="searchPhone">
-                                        <Form.Label>Telefone</Form.Label>
-                                        <Form.Control type="text" />
-                                    </Form.Group>
-                                </Col>
-                            </Form.Row>
-                            <Form.Row>
-                                <Col md={3}>
-                                    <Form.Group controlId="searchEndereco">
-                                        <Form.Label>Endereço</Form.Label>
-                                        <Form.Control type="text" />
-                                    </Form.Group>
-                                </Col>
-                                <Col md={3}>
-                                    <Form.Group controlId="searchBairro">
-                                        <Form.Label>Bairro</Form.Label>
-                                        <Form.Control type="text" />
-                                    </Form.Group>
-                                </Col>
-                                <Col md={3}>
-                                    <Form.Group controlId="searchCidade">
-                                        <Form.Label>Cidade</Form.Label>
-                                        <Form.Control type="text" />
-                                    </Form.Group>
-                                </Col>
-                                <Col md={3}>
-                                    <Form.Group controlId="searchUf">
-                                        <Form.Label>UF</Form.Label>
-                                        <Form.Control type="text" />
-                                    </Form.Group>
-                                </Col>
-                            </Form.Row>
-                            <Form.Row>
-                                <Col md={{ span: 2, offset: 10 }}>
-                                    <Button variant="primary" block>Buscar</Button>
-                                </Col>
-                            </Form.Row>
-                        </Form>
-                    </Container>
-                    <br />
-                </Card>
-                <br />
                 <Table responsive bordered variant="light">
                     <thead>
                         <tr>
@@ -117,8 +57,8 @@ function List() {
                             <td>{client.address.address}</td>
                             <td>{client.address.neighborhood}</td>
                             <td>{client.address.city} - {client.address.uf.toUpperCase()}</td>
-                            <td><Button variant="warning" onClick={() => history.push({pathname: '/editar', state: {client}})}>E</Button></td>
-                            <td><Button variant="danger" onClick={() => deleteC(client.id)}>R</Button></td>
+                            <td><Button variant="warning" onClick={() => history.push({pathname: '/editar', state: {client}})}>Editar</Button></td>
+                            <td><Button variant="danger" onClick={() => deleteC(client.id)}>Remover</Button></td>
                         </tr>))}
                     </tbody>
                 </Table>
