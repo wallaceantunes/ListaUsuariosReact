@@ -37,15 +37,17 @@ function Create() {
     const getAddrresByCep = async (cep) => {
         try {
             const resp = await getCep(cep)
-            console.log(resp);
-            setLat(Number(resp.data.latitude))
-            setLng(Number(resp.data.longitude))
+            if(resp.data.latitude && resp.data.longitude){
+                setLat(Number(resp.data.latitude))
+                setLng(Number(resp.data.longitude))
+            }
             setAddressStreet(resp.data.logradouro)
             setNeighborhood(resp.data.bairro)
             setCity(resp.data.cidade.nome)
             setUf(resp.data.estado.sigla)
         } catch (error) {
-            
+            setLat(0)
+            setLng(0)
         }
     }
     useEffect(()=>{
