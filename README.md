@@ -10,5 +10,5 @@ npm install
 npm start
 ```
 ## Observation
-é necessário estar com o back-end Rodando
+é necessário estar com o back-end rodando
 https://github.com/wallaceantunes/desafio-zukk-backend
