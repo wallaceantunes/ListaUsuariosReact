@@ -11,4 +11,4 @@ npm start
 ```
 ## Observation
 é necessário estar com o back-end rodando
-https://github.com/wallaceantunes/desafio-zukk-backend
+https://github.com/wallaceantunes/ListaUsuariosBackEnd
